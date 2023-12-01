@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="both-wrappers">
+
+        <div class="first">
+            <img id="mario" class="pic" src="/mario.webp" alt="">
+            <h2 class="mario-h2">Марио</h2>
+            <p class="pers-p">Персонаж</p>
+        </div>
+    
+        <div class="second">
+            <img id="enstain" class="pic" src="/enstain.png" alt="">
+            <h2 class="enstain-h2">Альберт Эйнштейн</h2>
+            <p class="enstain-p">Физик-теоретик</p>
+            <div class="first-wrapper"></div>
+        </div>
+
+    </div>
+
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+            min-height: 100vh; /* 100% высота видимого экрана */
+            margin: 0;
+            justify-content: center; /* по центру горизонтально */
+            align-items: center; /* по центру вертикально */
+    }
+
+    .both-wrappers{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first {
+        width: 70%;
+        display: block;
+        margin-bottom: 15%;
+    }
+    .second {
+        width: 70%;
+        display: block;
+    }
+
+    .pic {
+        display: block;
+        margin: 0 auto;
+        height: 50%;
+        width: 50%;
+        box-shadow: 0px 15px 15px #00000029;
+        border: 1px solid #27A7E7;
+        border-radius: 20%;
+        opacity: 1;
+        cursor: pointer;
+    }
+    .mario-h2 {
+        text-align: center;
+        font-size: 25px;
+        letter-spacing: 0px;
+        color: #27A7E7;
+        opacity: 1;
+    }
+    .pers-p {
+        text-align: center;
+        font-size: 19px;
+        letter-spacing: 0px;
+        color: #27A7E7;
+        opacity: 1;
+    }
+    .enstain-h2{
+        text-align: center;
+        font-size: 25px;
+        letter-spacing: 0px;
+        color: #27A7E7;
+        opacity: 1;
+    }
+    .enstain-p {
+        text-align: center;
+        font-size: 19px;
+        letter-spacing: 0px;
+        color: #27A7E7;
+        opacity: 1;
+    }
+</style>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<script>
+    let tg = window.Telegram.WebApp;
+    tg.expand();
+
+    document.getElementById("mario").addEventListener("click", () => {tg.sendData('mario')})
+
+    document.getElementById("enstain").addEventListener("click", () => {tg.sendData('enstain')})
+    
+</script>
+</html>
